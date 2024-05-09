@@ -1,6 +1,6 @@
 // Custom hook for fetching jobs
-// NOTICE: Using this approch will cost more pre-renders then nesseccery
-// Therefore, its better to use the classic useEffect approch
+// NOTICE: Using this approach will cost more pre-renders than necessary
+// Therefore in this case, it's better to use our classic useEffect approach - but I built it anyway just for learning purposes.
 
 import axios from 'axios';
 import {useEffect, useState} from 'react';
