@@ -15,7 +15,7 @@ export const fetchAvailableJobs =
 
       refresh ? dispatch(setRefresh(jobs)) : dispatch(updateJobList(jobs));
     } catch (error) {
-      // Server would handle error meesage accordently (error.response.data)
+      // The Server would handle error messages accordingly (error.response.data)
       const errorMessage = 'Something went worng';
       dispatch(setMessage(errorMessage));
     }
