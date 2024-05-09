@@ -13,3 +13,10 @@ Although the UI is straightforward, I back it up with simple animation (Reanimat
 
 axios: for fetching data (With no interceptor -> only one API call)
 redux-toolkit: for state management (Even though we've just one screen)
+
+<!-- Install -->
+
+This project was built with react native 0.74.1 - Android Studio "jellyfish" is a MUST
+
+1. npm install
+2. cd ios && pod install (IOS only)
