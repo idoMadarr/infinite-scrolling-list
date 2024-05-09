@@ -1,17 +1,28 @@
-/**
- * @format
- */
-
-import 'react-native';
-import React from 'react';
+import * as React from 'react';
+import {Dimensions} from 'react-native';
+import {render, fireEvent} from '@testing-library/react-native';
+import {it, describe, expect} from '@jest/globals';
 import App from '../App';
 
-// Note: import explicitly to use the types shipped with jest.
-import {it} from '@jest/globals';
+const {height, width} = Dimensions.get('window');
 
-// Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
+describe('Testing infinite scrolling list', () => {
+  it('Check the main screen is render correctly', async () => {
+    const {getByTestId} = render(<App />);
+    const header = getByTestId('header');
+    expect(header).toBeTruthy();
+  });
 
-it('renders correctly', () => {
-  renderer.create(<App />);
+  it('Scroll to the end of the list', () => {
+    const {getByTestId} = render(<App />);
+    const flatlist = getByTestId('flatlist');
+
+    fireEvent.scroll(flatlist, {
+      nativeEvent: {
+        contentSize: {height, width: width * 0.85},
+        contentOffset: {y: height},
+        layoutMeasurement: {height, width},
+      },
+    });
+  });
 });

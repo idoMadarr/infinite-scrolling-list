@@ -3,7 +3,7 @@ import {Text, StyleSheet, Dimensions, View} from 'react-native';
 
 const HeaderList = () => {
   return (
-    <View style={styles.headerContainer}>
+    <View testID={'header'} style={styles.headerContainer}>
       <Text>
         Infinite Scrolling List with Load More, Pull to Refresh and a bit of
         Reanimated

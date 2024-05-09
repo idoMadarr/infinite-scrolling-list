@@ -64,6 +64,7 @@ const MainScreen = () => {
           onRefresh={onRefresh}
           refreshing={refreshing}
           ListFooterComponent={listFooterComponent}
+          testID={'flatlist'}
         />
       )}
       <Text>{errorMessage}</Text>
